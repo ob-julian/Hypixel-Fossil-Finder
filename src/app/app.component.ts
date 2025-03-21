@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -8,6 +8,13 @@ import { RouterOutlet } from '@angular/router';
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
 })
-export class AppComponent {
-  title = 'Hypixel Fossil Finder';
+export class AppComponent implements AfterViewInit {
+    title = 'Hypixel Fossil Finder';
+
+    ngAfterViewInit(): void {
+        const mainElement = document.getElementById("main");
+        if (mainElement) {
+            mainElement.style.display = "";
+        }
+    }
 }

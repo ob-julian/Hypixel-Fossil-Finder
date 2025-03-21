@@ -50,31 +50,38 @@
     </script>
 </head>
 <body class="mode-light">
-    <script type="text/javascript">
-        theme = setMode(theme);
-    </script>
-    <noscript>
-        <style>
-            body {
-                background-color: #f0f0f0;
-                color: #121212;
+    <div id="main">
+        <script type="text/javascript">
+            theme = setMode(theme);
+            //stop components from flickering
+            const mainElement = document.getElementById("main");
+            if (mainElement) {
+                mainElement.style.display = "none";
             }
-            @media (prefers-color-scheme: dark) {
+        </script>
+        <noscript>
+            <style>
                 body {
-                    background-color: #121212;
-                    color: #f0f0f0;
+                    background-color: #f0f0f0;
+                    color: #121212;
                 }
-            }
-        </style>
-        <strong class="center">I'm sorry, but Hypixel Fossil Finder doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
+                @media (prefers-color-scheme: dark) {
+                    body {
+                        background-color: #121212;
+                        color: #f0f0f0;
+                    }
+                }
+            </style>
+            <strong class="center">I'm sorry, but Hypixel Fossil Finder doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+        </noscript>
 
-    <app-root></app-root>
+        <app-root></app-root>
 
-    <div class="center">
-        <a class="link" href="/" id="create">Created by Julian Ob.</a>
-        |
-        <a href="/privacy-policy" id="privacy"> <span class="link"> Privacy Policy </span> </a>
+        <div class="center">
+            <a class="link" href="/" id="create">Created by Julian Ob.</a>
+            |
+            <a href="/privacy-policy" id="privacy"> <span class="link"> Privacy Policy </span> </a>
+        </div>
     </div>
 </body>
 </html>
