@@ -48,6 +48,9 @@ export class SolverInputComponent implements OnInit {
             this.numberOfPossibleExcavations -= dataCells; // remove obvious excavations
         });
         this.autoUpdate = (typeof localStorage !== 'undefined') ? localStorage.getItem('autoUpdate') === 'true' : false;
+        if (this.autoUpdate) {
+            this.solve();
+        }
     }
 
     toggleCellState(row: number, col: number): void {
@@ -92,6 +95,10 @@ export class SolverInputComponent implements OnInit {
 
     autoUpdateChanged(): void {
         localStorage.setItem('autoUpdate', this.autoUpdate.toString());
+        // trigger update
+        if (this.autoUpdate) {
+            this.solve();
+        }
     }
 
 }
