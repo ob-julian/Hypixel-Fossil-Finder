@@ -12,7 +12,7 @@
 
 ## Why?
 
-In short, I didn't want to install another mod for this activity I do like once a month. Furthermore, a mod that does only this one thing probably doesn't exist and I would need to sour through a bunch of other features I don't need. 
+In short, I didn't want to install another mod for this activity I do like once a month. Furthermore, a mod that does only this one thing probably doesn't exist and I would need to sift through a bunch of other features I don't need. 
 
 So, I did what any sane person would do: spend hours upon hours building a web application that does the same thing. Because, you know, why take the easy route when you can over-engineer a solution for a problem you barely encounter?
 

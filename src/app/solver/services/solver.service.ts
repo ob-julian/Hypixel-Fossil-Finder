@@ -174,15 +174,15 @@ export class SolverService{
     }
 
 
-    private _checkFossilForEmpty(data: CellState[][], fossile: ColoredFossil, dataAccum: number[][]): void {
+    private _checkFossilForEmpty(data: CellState[][], fossil: ColoredFossil, dataAccum: number[][]): void {
         // check if length and width are correct
-        if (fossile.data.length > data.length || fossile.data[0].length > data[0].length) {
+        if (fossil.data.length > data.length || fossil.data[0].length > data[0].length) {
             return;
         }
-        for (let i = 0; i <= data.length - fossile.data.length; i++) {
-            for (let j = 0; j <= data[0].length - fossile.data[0].length; j++) {
-                if (this._checkFossilAtPositionForEmpty(data, fossile, i, j)) {
-                    this._addFossilToData(dataAccum, fossile, i, j);
+        for (let i = 0; i <= data.length - fossil.data.length; i++) {
+            for (let j = 0; j <= data[0].length - fossil.data[0].length; j++) {
+                if (this._checkFossilAtPositionForEmpty(data, fossil, i, j)) {
+                    this._addFossilToData(dataAccum, fossil, i, j);
                 }
             }
         }

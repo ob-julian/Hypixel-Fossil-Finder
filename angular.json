@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "hypixel_fosile_finder": {
+    "hypixel_fossil_finder": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/hypixel_fosile_finder",
+            "outputPath": "dist/hypixel_fossil_finder",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "hypixel_fosile_finder:build:production"
+              "buildTarget": "hypixel_fossil_finder:build:production"
             },
             "development": {
-              "buildTarget": "hypixel_fosile_finder:build:development"
+              "buildTarget": "hypixel_fossil_finder:build:development"
             }
           },
           "defaultConfiguration": "development"

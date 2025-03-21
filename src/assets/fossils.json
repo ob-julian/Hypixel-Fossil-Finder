@@ -38,7 +38,7 @@
   {
       "id":7,
       "name":"Claw",
-      "description":"Variant  3",
+      "description":"Variant 3",
       "data":[[false,true,false,false,false],[true,false,true,false,false],[false,true,false,true,false],[true,false,true,true,false],[false,true,true,true,true],[false,false,false,true,false]]
   },
   {

@@ -38,7 +38,7 @@ export class FossilViewerComponent {
             newFossil.id = this.fossil.id;
             newFossil.name = this.fossil.name;
             newFossil.description = this.fossil.description;
-            // increase numbers in description by 1, to simplyfy dublicating variants
+            // increase numbers in description by 1, to simplify duplicating variants
             const matches = this.fossil.description.match(/\d+/);
             console.log(matches);
             if (matches) {

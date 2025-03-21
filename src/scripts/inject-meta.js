@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const minify = require('html-minifier').minify;
 
-const appName = "hypixel_fosile_finder";
+const appName = "hypixel_fossil_finder";
 const metaRoutes = require("../meta.routes.json");
 const distPath = path.join(__dirname, "../../dist/", appName, "browser");
 
