@@ -1,0 +1,16 @@
+.error {
+    color: var(--error-color);
+    font-size: 0.8em;
+    margin-top: 0.2em;
+}
+
+.button-group {
+    border-radius: 10px;
+    background-color: var(--button-group-background);
+    padding: 2px;
+    margin: 20px 5px 10px 5px;
+}
+
+.button-edit-container {
+    display: flex;
+}

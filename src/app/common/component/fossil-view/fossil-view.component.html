@@ -1,0 +1,17 @@
+<div class="fossil-viewer">
+    <strong>{{ fossil.name }}</strong>
+    <p class="fossil-description">{{ fossil.description }}</p>
+    <div class="inventory-container">
+        <div *ngFor="let row of fossil.data; let i = index; trackBy: trackByIndex" class="inventory">
+            <div *ngFor="let cell of row; let j = index; trackBy: trackByIndex" class="invslot-container">
+                <span class="invslot">
+                    <span *ngIf="cell"
+                        class="invslot-display"
+                        [ngStyle]="{'background-image': 'url(panes/' + lookUpColor(cell) + '.png)'}"
+                        [title]="getCellInfo(i, j)">
+                    </span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

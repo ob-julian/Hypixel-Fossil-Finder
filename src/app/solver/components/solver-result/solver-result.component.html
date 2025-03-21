@@ -1,0 +1,31 @@
+<div class="solver-result">
+    <h2>Fitting Fossils:</h2>
+    <ng-container *ngIf="!hasRun">
+        <div class="card">{{ message }}</div>
+    </ng-container>
+    <div *ngIf="hasRun && possibleFossils.length > 0" class="viewport-container">
+        <cdk-virtual-scroll-viewport itemSize="300" class="viewport">
+
+            <div class="legend card">
+                Not green panes are possible fitting positions of your current excavation state.
+                <br>
+                Overlapping possible fitting positions are marked with yet another color.
+                <br>
+                Hover over the panes to reveal the corresponding fossil fragment.
+            </div>
+            <div class="card">
+                Found {{ possibleFossils.length }} fitting fossils with a total of {{ totalSubFossils }} possible position<ng-container *ngIf="totalSubFossils > 1">s</ng-container>
+
+            </div>
+            <div *cdkVirtualFor="let fossil of possibleFossils; trackBy: trackByFossil; let i = index">
+                <div class="card">
+                    <fossil-view [fossil]="fossil[0]"></fossil-view>
+                    Possible positions: {{ fossil[1] }}
+                </div>
+            </div>
+        </cdk-virtual-scroll-viewport>
+    </div>
+    <ng-container *ngIf="hasRun && possibleFossils.length === 0">
+        <div class="card">No fitting fossils found</div>
+    </ng-container>
+</div>

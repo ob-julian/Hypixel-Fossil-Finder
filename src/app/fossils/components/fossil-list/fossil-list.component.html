@@ -1,0 +1,36 @@
+<div class="fossil-list">
+    <div class="button-container">
+        <theme-switcher></theme-switcher>
+        <button (click)="toSolver()">To Solver</button>
+    </div>
+    <div class="button-container">
+        <h2>All known fossils by this <a href="https://hypixel.net/threads/all-fossils-variants.5626280/">Hypixel Skyblock Thread</a></h2>
+    </div>
+    
+    <div *ngFor="let fossil of fossils | keyvalue; trackBy: trackByFossilKey">
+        <ng-container *ngIf="!editingFossils.has(fossil.key); else editor">
+            <fossil-viewer [fossil]="fossil.value" (edit)="enableFossilEdit(fossil.key)" (delete)="deleteFossil(fossil.key)"></fossil-viewer>
+        </ng-container>
+        <ng-template #editor>
+            <fossil-editor [fossil]="fossil.value" (cancel)="hideFossilEdit(fossil.key)" (save)="saveUpdatedFossil($event);hideFossilEdit(fossil.key)"></fossil-editor>
+        </ng-template>
+    </div>
+    <h2>Add a new fossil locally</h2>
+    <div *ngFor="let editor of newFossilEditors; let i = index">
+        <fossil-editor [fossil]="{id: maxIndex+i+1, name:'', description:'', data: [[false]]}" (cancel)="removeFossilEditor(i)" (save)="addFossil($event); removeFossilEditor(i)"></fossil-editor>
+    </div>
+    <div class="button-container">
+        <button (click)="addFossilEditor()">Add Fossil</button>
+        <div>
+            <button *ngIf="!willDeleteAll" (click)="tryDeleteLocalFossils()" class="deleteLocally">Delete all local changes</button>
+            <div *ngIf="willDeleteAll" class="card">
+                <div class="error">Are you sure you want to delete all local changes?</div>
+                <br>
+                <div class="button-container">
+                    <button (click)="deleteLocalFossil()">Yes</button>
+                    <button (click)="cancelDeleteLocalFossil()">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+{
+    "/": {
+        "title": "Hypixel Fossil Finder",
+        "description": "The Hypixel Fossil Finder is a tool to help you locate fossils from suspicious scrap in Hypixel Skyblock. Input your current excavation state to get a list of potential fossils and the best follow-up actions to maximize your findings."
+    },
+    "/solver": {
+        "title": "Hypixel Fossil Finder - Solver",
+        "description": "Use the Fossil Solver tool to locate fossils from suspicious scrap in Hypixel Skyblock. Input your current excavation state to get a list of potential fossils and the best follow-up actions to maximize your findings."
+    },
+    "/fossils": {
+        "title": "Hypixel Fossil Finder - Archive",
+        "description": "Explore the Fossil Archive to view, add, edit, or delete fossils. Manage the known fossil collection efficiently and contribute to the community by sharing new discoveries or correcting errors."
+    }
+}

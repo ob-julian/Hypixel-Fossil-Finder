@@ -1,0 +1,6 @@
+<select id="theme-switcher" [(ngModel)]="selectedTheme" onchange="setMode(this.value);">
+    <ng-container *ngFor="let theme of availableThemes">
+        <option [value]="theme" [id]="theme">{{capitalizeFirstLetter(theme)}}</option>
+    </ng-container>
+    <option value="auto" id="auto">Auto</option>
+</select>

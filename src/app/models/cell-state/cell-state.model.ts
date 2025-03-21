@@ -1,0 +1,1 @@
+export type CellState = true | false | null;

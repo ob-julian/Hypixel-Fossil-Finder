@@ -1,0 +1,42 @@
+<div class="fossil-editor card">
+    <div>
+        <input [(ngModel)]="fossilCopy.name" placeholder="Name">
+        <br>
+        <textarea [(ngModel)]="fossilCopy.description" placeholder="Description"></textarea>
+        <br>
+        <div *ngFor="let row of fossilCopy.data; let rowIndex = index" class="inventory">
+            <div *ngFor="let cell of row; let cellIndex = index" class="invslot-container">
+                <span class="invslot" (click)="toggleGreenPanel(rowIndex, cellIndex)">
+                    <span *ngIf="cell" style="background-image: url('panes/green.png')" class="invslot-display"></span>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="button-edit-container">
+        <div class="button-group">
+            <button (click)="addRowLeft()">Left</button>
+            <span> Add Row </span>
+            <button (click)="addRowRight()">Right</button>
+        </div>
+        <div class="button-group">
+            <button (click)="addColumnTop()">Top</button>
+            <span> Add Column </span>
+            <button (click)="addColumnBottom()">Bottom</button>
+        </div>
+        <div class="button-group">
+            <button (click)="rotateLeft()">Left</button>
+            <span> Rotate </span>
+            <button (click)="rotateRight()">Right</button>
+        </div>
+        <div class="button-group">
+            <button (click)="flipVertical()">Vertical</button>
+            <span> Flip </span>
+            <button (click)="flipHorizontal()">Horizontal</button>
+        </div>
+    </div>
+    <button (click)="saveFossil()">Save</button>
+    <button (click)="cancelEdit()">Cancel</button>
+    <ng-container *ngIf="hasError">
+        <div class="error">{{ error }}</div>
+    </ng-container>
+</div>

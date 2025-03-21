@@ -1,0 +1,61 @@
+.solver-input {
+    padding: 20px;
+}
+
+.legend {
+    margin-left: 20px;
+}
+
+.legend div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.legend .invslot-display {
+    margin-right: 10px;
+}
+
+
+.inventory-legend-wrapper {
+    display: flex;
+    align-items: flex-start;
+}
+
+.nextToInv{
+    margin-left: 8px; /* 10 but 2px for the border */
+}
+
+.scrollable-container {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--background-color);
+    display: flex;
+}
+
+#auto-update {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--button-color);
+  }
+
+#auto-update + label {
+    font-size: 16px;
+    margin-left: 8px;
+    cursor: pointer;
+  }
+  
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin: 0 0 10px 0;
+}
+
+.inv-bg {
+    background: var(--inventory-background) no-repeat center center / 32px 32px;
+    width: 32px;
+    height: 32px;
+}

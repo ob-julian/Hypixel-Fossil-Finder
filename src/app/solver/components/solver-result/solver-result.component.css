@@ -1,0 +1,12 @@
+.viewport {
+    display: block;
+    height: 100%;
+    overflow: auto;
+}
+
+.viewport-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;  /* full viewport height */
+    overflow-y: auto; /* enable scroll on the body */
+  }

@@ -1,13 +1,80 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>HypixelFosileFinder</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <base href="/hff/">
+    <meta charset="utf-8">
+    <title>Hypixel Fosile Finder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <script type="text/javascript">
+        const availableThemes = ['light', 'dark', 'furfsky'];
+        window.availableThemes = availableThemes;
+        let theme = localStorage.getItem('theme') || "auto";
+        let autoThemeSwitchListener = window.matchMedia('(prefers-color-scheme: dark)');
+        
+        function setMode(theme){
+            console.log("setMode: " + theme);
+            localStorage.setItem('theme', theme);
+
+            if (availableThemes.includes(theme) === false) {
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    theme = "dark";
+                }
+                else{
+                    theme = "light";
+                }
+                autoThemeSwitchListener.addEventListener('change', setMode); // we can just pass the setMode function because we need the theme parameter to be not the correct names inorder to be auto, so null suffices
+            } else {
+                autoThemeSwitchListener.removeEventListener('change', setMode);
+            }
+
+            for (let i = 0; i < availableThemes.length; i++) {
+                document.body.classList.remove('mode-' + availableThemes[i]);
+            }
+            document.body.classList.add('mode-' + theme);
+
+            return theme;
+        }
+
+        function adjustThemeSelector(){
+            const theme = localStorage.getItem('theme');
+            if (availableThemes.includes(theme) === false) {
+                document.getElementById("auto").selected = true;
+            } else {
+                document.getElementById(theme).selected = true;
+            }
+        }
+
+        window.adjustThemeSelector = adjustThemeSelector;
+    </script>
 </head>
-<body>
-  <app-root></app-root>
+<body class="mode-light">
+    <script type="text/javascript">
+        theme = setMode(theme);
+    </script>
+    <noscript>
+        <style>
+            body {
+                background-color: #f0f0f0;
+                color: #121212;
+            }
+            @media (prefers-color-scheme: dark) {
+                body {
+                    background-color: #121212;
+                    color: #f0f0f0;
+                }
+            }
+        </style>
+        <strong class="center">I'm sorry but Hypixel Fosile Finder doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+
+    <app-root></app-root>
+
+    <div class="center">
+        <a class="link" href="/" id="create">Created by Julian Ob.</a>
+        |
+        <a href="/privacy-policy" id="privacy"> <span class="link"> Privacy Policy </span> </a>
+    </div>
 </body>
 </html>

@@ -1,0 +1,14 @@
+<div class="fossil-viewer card">
+    <div>
+        <fossil-view [fossil]="fossil"></fossil-view>
+        <br>
+        <button (click)="enableFossilEdit()">Edit</button>
+        <button (click)="duplicateFossil()">Duplicate</button>
+        <button (click)="wantsToDeleteFossil()" *ngIf="!willDelete">Delete</button>
+        <ng-container *ngIf="willDelete">
+            <div class="error">Are you sure you want to delete this fossil?</div>
+            <button (click)="deleteFossil()">Yes</button>
+            <button (click)="cancelDelete()">No</button>
+        </ng-container>
+    </div>
+</div>

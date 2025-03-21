@@ -1,1 +1,155 @@
-/* You can add global styles to this file, and also import other style files */
+.mode-light {
+    --body-background: #f8f9fa;
+    --input-background-color: #e0e3e6;
+    --background-color: #C6C6C6;
+    --button-color: #4CAF50;
+    --black: black;
+    --white: white;
+    --inventory-background: #8B8B8B;
+    --inventory-border-1: #373737;
+    --inventory-border-2: #FFF;
+    --error-color: red;
+    --button-group-background: #f8f9fa;
+    --delete-button-color: #f44336;
+}
+
+.mode-dark {
+    --body-background: #0a0a0a;
+    --input-background-color: #1a1a1a;
+    --background-color: #1a1a1a;
+    --button-color: #4CAF50;
+    --black: #d6d6d6;
+    --white: #0c0c39;
+    --inventory-background: #2f2f2f;
+    --inventory-border-1: #202020;
+    --inventory-border-2: #636363;
+    --error-color: red;
+    --button-group-background: #2c354d;
+    --delete-button-color: #f44336;
+}
+
+.mode-furfsky {
+    --body-background: #312a34;
+    --input-background-color: #201b22;
+    --background-color: #292229;
+    --button-color: #4CAF50;
+    --black: #fbcc6c;
+    --white: #0c0c39;
+    --inventory-background: #525c88;
+    --inventory-border-1: #404973;
+    --inventory-border-2: #7984b9;
+    --error-color: red;
+    --button-group-background: #2c354d;
+    --delete-button-color: #f44336;
+}
+
+
+
+body {
+    background-color: var(--body-background);
+    color: var(--black);
+}
+
+.card {
+    background-color: var(--background-color);
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+button {
+    background-color: var(--button-color);
+    border: none;
+    color: var(--white);
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition-duration: 0.4s;
+    border: 2px solid var(--button-color);
+    height: fit-content;
+}
+
+button:hover {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+/* Credit to the Minecraft Wiki for the CSS*/
+.invslot {
+    position: relative;
+    display: inline-block;
+    background: var(--inventory-background) no-repeat center center / 32px 32px;
+    border: 2px solid;
+    border-color: var(--inventory-border-1) var(--inventory-border-2) var(--inventory-border-2) var(--inventory-border-1);
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    line-height: 1;
+    text-align: left;
+    vertical-align: bottom;
+    box-sizing: content-box;
+}
+
+.invslot-display {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+}
+
+.invslot-container {
+    display: block;
+}
+
+.inventory {
+    display: inline-block;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.link {
+    text-decoration: underline;
+    color: #149f96;
+    font-weight: 700;
+    padding: 0 5px;
+}
+
+.inventory-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    height: auto;
+    padding: 1px; /*Otherwise Chrome shows a scrollbar*/
+}
+
+.fossil-description {
+    white-space: pre-line;
+}
+
+textarea {
+    background-color: var(--input-background-color);
+    color: var(--black);
+}
+
+input {
+    background-color: var(--input-background-color);
+    color: var(--black);
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
