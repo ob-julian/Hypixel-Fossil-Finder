@@ -12,9 +12,14 @@ export class AppComponent implements AfterViewInit {
     title = 'Hypixel Fossil Finder';
 
     ngAfterViewInit(): void {
-        const mainElement = document.getElementById("main");
-        if (mainElement) {
-            mainElement.style.display = "";
+        const htmldoc = (typeof document !== 'undefined') ? document : null;
+        if (htmldoc) {
+            const mainElement = htmldoc.getElementById("main");
+            if (mainElement) {
+                mainElement.style.display = "";
+            }
+            htmldoc.body.classList.remove("no-transition");
         }
+        
     }
 }

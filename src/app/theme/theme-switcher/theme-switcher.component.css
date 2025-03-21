@@ -12,3 +12,15 @@
     background-color: var(--button-color);
     color: var(--white);
 }
+
+#theme-switcher > option {
+    background-color: var(--background-color);
+    color: var(--black);
+    border: 1px solid var(--button-color);
+}
+
+#theme-switcher:focus {
+    background-color: var(--button-color);
+    color: var(--white);
+    border: 1px solid var(--button-color);
+}

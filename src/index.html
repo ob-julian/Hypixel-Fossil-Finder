@@ -57,6 +57,8 @@
             const mainElement = document.getElementById("main");
             if (mainElement) {
                 mainElement.style.display = "none";
+                //stop animations
+                document.body.classList.add("no-transition");
             }
         </script>
         <noscript>

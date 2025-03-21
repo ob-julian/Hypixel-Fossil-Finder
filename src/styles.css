@@ -1,3 +1,20 @@
+:root {
+    --transition-duration-bg-color: 0.5s;
+    --transition-duration-color: 0.2s;
+    --transition-duration-border: 0.4s;
+}
+
+.no-transition {
+    transition: none;
+    --transition-duration-bg-color: 0s;
+    --transition-duration-color: 0s;
+    --transition-duration-border: 0s;
+}
+
+body, .card, button, .invslot, textarea, input, select {
+    transition: background-color var(--transition-duration-bg-color), color var(--transition-duration-color), border-color var(--transition-duration-border);
+}
+
 .mode-light {
     --body-background: #f8f9fa;
     --input-background-color: #e0e3e6;
