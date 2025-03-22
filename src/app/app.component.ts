@@ -1,4 +1,4 @@
-import { Component, AfterViewChecked } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -8,24 +8,21 @@ import { RouterOutlet } from '@angular/router';
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
 })
-export class AppComponent implements AfterViewChecked {
+export class AppComponent implements AfterViewInit {
     title = 'Hypixel Fossil Finder';
-    private hasRun = false;
 
-    ngAfterViewChecked(): void {
-        if (this.hasRun) {
-            return;
-        }
-
+    ngAfterViewInit(): void {
         const htmldoc = (typeof document !== 'undefined') ? document : null;
         if (htmldoc) {
             const mainElement = htmldoc.getElementById("main");
             if (mainElement) {
                 mainElement.style.display = "";
             }
-            htmldoc.body.classList.remove("no-transition");
+            // wait a bit before removing the no-transition class to prevent flickering - thx chrome, firefox works fine...
+            setTimeout(() => {
+                htmldoc.body.classList.remove("no-transition");
+            }, 100);
         }
-
-        this.hasRun = true;
+        
     }
 }
