@@ -26,15 +26,6 @@
     margin-left: 8px; /* 10 but 2px for the border */
 }
 
-.scrollable-container {
-    position: sticky;
-    position: -webkit-sticky;
-    top: 0;
-    z-index: 1000;
-    background-color: var(--background-color);
-    display: flex;
-}
-
 #auto-update {
     width: 20px;
     height: 20px;

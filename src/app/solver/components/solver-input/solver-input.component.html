@@ -8,16 +8,14 @@
         <h2>Input your current excavation state:</h2>
     </div>
     <div class="inventory-legend-wrapper">
-        <div class="scrollable-container">
-            <div class="inventory-container">
-                <div *ngFor="let row of data; let i = index" class="inventory">
-                    <div *ngFor="let cell of row; let j = index" class="invslot-container">
-                        <span class="invslot" (click)="toggleCellState(i, j)">
-                            <span *ngIf="cell" style="background-image: url('panes/green.png')" class="invslot-display"></span>
-                            <span *ngIf="cell === false" style="background-image: url('panes/red.png')" class="invslot-display"></span>
-                            <span *ngIf="isPossibleExcavation(i, j)" style="background-image: url('panes/yellow.png')" class="invslot-display"></span>
-                        </span>
-                    </div>
+        <div class="inventory-container">
+            <div *ngFor="let row of data; let i = index" class="inventory">
+                <div *ngFor="let cell of row; let j = index" class="invslot-container">
+                    <span class="invslot" (click)="toggleCellState(i, j)">
+                        <span *ngIf="cell" style="background-image: url('panes/green.png')" class="invslot-display"></span>
+                        <span *ngIf="cell === false" style="background-image: url('panes/red.png')" class="invslot-display"></span>
+                        <span *ngIf="isPossibleExcavation(i, j)" style="background-image: url('panes/yellow.png')" class="invslot-display"></span>
+                    </span>
                 </div>
             </div>
         </div>
