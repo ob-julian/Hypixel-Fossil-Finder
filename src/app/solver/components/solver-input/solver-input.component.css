@@ -1,5 +1,5 @@
 .solver-input {
-    padding: 20px;
+    padding: 20px 5px 20px 20px;
 }
 
 .legend {
@@ -58,4 +58,14 @@
     background: var(--inventory-background) no-repeat center center / 32px 32px;
     width: 32px;
     height: 32px;
+}
+
+@media (max-width: 590px) {
+    .inventory-legend-wrapper {
+        flex-direction: column;
+    }
+    .legend {
+        margin-top: 20px;
+        margin-left: 2px;
+    }
 }
