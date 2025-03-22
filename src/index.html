@@ -46,6 +46,23 @@
             }
         }
 
+        function scaleContent() {
+            // + 10 pixel to avoid floating point errors
+            const baseWidth = 390;
+            const baseHeight = 410;
+            const viewport = document.querySelector('meta[name="viewport"]');
+            const deviceWidth = window.screen.width;
+            const deviceHeight = window.screen.height;
+            const scaleWidth = Math.min(1, deviceWidth / baseWidth);
+            const scaleHeight = Math.min(1, deviceHeight / baseHeight);
+            const scale = Math.min(scaleWidth, scaleHeight);
+            //viewport.content = `width=${baseWidth}, initial-scale=${scale}`;
+            viewport.content = `width=device-width, initial-scale=${parseFloat(scale)}`;
+        }
+
+        scaleContent();
+        window.addEventListener('resize', scaleContent);
+
         window.adjustThemeSelector = adjustThemeSelector;
     </script>
 </head>
