@@ -48,7 +48,8 @@
 
         function scaleContent() {
             // + 10 pixel to avoid floating point errors
-            const baseWidth = 390;
+            const baseWidth = 326 + 2*20 + 2*8; //= 382
+            // inventory width + 2 * padding + 2 * body margin
             const baseHeight = 410;
             const viewport = document.querySelector('meta[name="viewport"]');
             const deviceWidth = window.screen.width;
