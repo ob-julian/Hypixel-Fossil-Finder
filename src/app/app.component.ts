@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewChecked } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -8,10 +8,15 @@ import { RouterOutlet } from '@angular/router';
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent implements AfterViewChecked {
     title = 'Hypixel Fossil Finder';
+    private hasRun = false;
 
-    ngAfterViewInit(): void {
+    ngAfterViewChecked(): void {
+        if (this.hasRun) {
+            return;
+        }
+
         const htmldoc = (typeof document !== 'undefined') ? document : null;
         if (htmldoc) {
             const mainElement = htmldoc.getElementById("main");
@@ -20,6 +25,7 @@ export class AppComponent implements AfterViewInit {
             }
             htmldoc.body.classList.remove("no-transition");
         }
-        
+
+        this.hasRun = true;
     }
 }
