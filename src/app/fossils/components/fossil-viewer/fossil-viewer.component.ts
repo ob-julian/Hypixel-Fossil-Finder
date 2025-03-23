@@ -40,7 +40,6 @@ export class FossilViewerComponent {
             newFossil.description = this.fossil.description;
             // increase numbers in description by 1, to simplify duplicating variants
             const matches = this.fossil.description.match(/\d+/);
-            console.log(matches);
             if (matches) {
                 const number = parseInt(matches[0], 10) + 1;
                 newFossil.description = this.fossil.description.replace(/\d+/, number.toString());

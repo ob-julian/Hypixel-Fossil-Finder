@@ -14,7 +14,6 @@
         let autoThemeSwitchListener = window.matchMedia('(prefers-color-scheme: dark)');
         
         function setMode(theme){
-            console.log("setMode: " + theme);
             localStorage.setItem('theme', theme);
 
             if (availableThemes.includes(theme) === false) {
