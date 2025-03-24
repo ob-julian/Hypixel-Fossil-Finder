@@ -1,0 +1,29 @@
+{
+  "name": "Hypixel Fossil Finder",
+  "short_name": "H. Fossil Finder",
+  "theme_color": "#C6C6C6",
+  "background_color": "#8B8B8B",
+  "display": "standalone",
+  "scope": "/hff/",
+  "start_url": "/hff/",
+  "icons": [
+    {
+      "src": "icons/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon-350x350.png",
+      "sizes": "350x350",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ]
+}
