@@ -1,55 +1,69 @@
 <div class="button-container">
-    <theme-switcher></theme-switcher>
-    <button (click)="showFossils()">Show all Fossils</button>
+  <theme-switcher></theme-switcher>
+  <button (click)="showFossils()">Show all Fossils</button>
 </div>
 <div class="solver-input card">
-    
-    <div class="button-container">
-        <h2>Input your current excavation state:</h2>
-    </div>
-    <div class="inventory-legend-wrapper">
-        <div class="inventory-container">
-            <div *ngFor="let row of data; let i = index" class="inventory">
-                <div *ngFor="let cell of row; let j = index" class="invslot-container">
-                    <span class="invslot" (click)="toggleCellState(i, j)">
-                        <span *ngIf="cell" style="background-image: url('panes/green.png')" class="invslot-display"></span>
-                        <span *ngIf="cell === false" style="background-image: url('panes/red.png')" class="invslot-display"></span>
-                        <span *ngIf="isPossibleExcavation(i, j)" style="background-image: url('panes/yellow.png')" class="invslot-display"></span>
-                    </span>
-                </div>
+
+  <div class="button-container">
+    <h2>Input your current excavation state:</h2>
+  </div>
+  <div class="inventory-legend-wrapper">
+    <div class="inventory-container">
+      @for (row of data; track row; let i = $index) {
+        <div class="inventory">
+          @for (cell of row; track cell; let j = $index) {
+            <div class="invslot-container">
+              <span class="invslot" (click)="toggleCellState(i, j)">
+                @if (cell) {
+                  <span style="background-image: url('panes/green.png')" class="invslot-display"></span>
+                }
+                @if (cell === false) {
+                  <span style="background-image: url('panes/red.png')" class="invslot-display"></span>
+                }
+                @if (isPossibleExcavation(i, j)) {
+                  <span style="background-image: url('panes/yellow.png')" class="invslot-display"></span>
+                }
+              </span>
             </div>
+          }
         </div>
-        <div class="legend">
-            Legend:
-            <br><br>
-            <div>
-                <span style="background-image: url('panes/green.png')" class="invslot-display"></span>
-                <span>- Fossil tile</span> 
-            </div>
-            <div>
-                <span style="background-image: url('panes/red.png')" class="invslot-display"></span>
-                <span>- Not a fossil tile</span>
-            </div>
-            <div>
-                <span class="inv-bg"></span>
-                <span class="nextToInv">- Unknown tile</span>
-            </div>
-            <div *ngIf="numberOfPossibleExcavations > 0">
-                <span style="background-image: url('panes/yellow.png')" class="invslot-display"></span>
-                <span>- Best possible next tile<ng-container *ngIf="numberOfPossibleExcavations > 1">s</ng-container></span>
-            </div>
-        </div>
+      }
     </div>
-    <br><br>
-    <div>
-        <div class="checkbox-container">
-            <input type="checkbox" [(ngModel)]="autoUpdate" (change)="autoUpdateChanged()" id="auto-update">
-            <label for="auto-update">Auto-update</label>
+    <div class="legend">
+      Legend:
+      <br><br>
+      <div>
+        <span style="background-image: url('panes/green.png')" class="invslot-display"></span>
+        <span>- Fossil tile</span>
+      </div>
+      <div>
+        <span style="background-image: url('panes/red.png')" class="invslot-display"></span>
+        <span>- Not a fossil tile</span>
+      </div>
+      <div>
+        <span class="inv-bg"></span>
+        <span class="nextToInv">- Unknown tile</span>
+      </div>
+      @if (numberOfPossibleExcavations > 0) {
+        <div>
+          <span style="background-image: url('panes/yellow.png')" class="invslot-display"></span>
+          <span>- Best possible next tile@if (numberOfPossibleExcavations > 1) {
+            s
+          }</span>
         </div>
-        <ng-container *ngIf="!autoUpdate">
-            <button (click)="solve()">Solve</button>
-        </ng-container>
-        <button (click)="clear()">Clear</button>
-        
+      }
     </div>
+  </div>
+  <br><br>
+  <div>
+    <div class="checkbox-container">
+      <input type="checkbox" [(ngModel)]="autoUpdate" (change)="autoUpdateChanged()" id="auto-update">
+      <label for="auto-update">Auto-update</label>
+    </div>
+    @if (!autoUpdate) {
+      <button (click)="solve()">Solve</button>
+    }
+    <button (click)="clear()">Clear</button>
+
+  </div>
 </div>

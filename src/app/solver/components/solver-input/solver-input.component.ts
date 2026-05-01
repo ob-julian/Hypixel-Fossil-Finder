@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { Router } from '@angular/router';
 import { SolverService } from '../../services/solver.service';
 import { CellState } from '../../../models/cell-state/cell-state.model';
@@ -8,7 +8,7 @@ import { ThemeSwitcherComponent } from "../../../theme/theme-switcher/theme-swit
 
 @Component({
     selector: 'app-solver-input',
-    imports: [CommonModule, FormsModule, ThemeSwitcherComponent],
+    imports: [FormsModule, ThemeSwitcherComponent],
     templateUrl: './solver-input.component.html',
     styleUrl: './solver-input.component.css'
 })

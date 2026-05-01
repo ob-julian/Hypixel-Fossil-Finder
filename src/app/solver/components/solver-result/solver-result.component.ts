@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { ScrollingModule } from '@angular/cdk/scrolling';
 
 import { ColoredFossil } from '../../../models/colored-fossil/colored-fossil.model';
@@ -8,7 +8,7 @@ import { SolverService } from '../../services/solver.service';
 
 @Component({
     selector: 'app-solver-result',
-    imports: [FossilViewComponent, CommonModule, ScrollingModule],
+    imports: [FossilViewComponent, ScrollingModule],
     templateUrl: './solver-result.component.html',
     styleUrl: './solver-result.component.css'
 })

@@ -1,12 +1,12 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { Fossil } from '../../../models/fossil/fossil.model';
 import { FossilService } from '../../services/fossil.service';
 import { FossilViewComponent } from '../../../common/component/fossil-view/fossil-view.component';
 
 @Component({
     selector: 'fossil-viewer',
-    imports: [CommonModule, FossilViewComponent],
+    imports: [FossilViewComponent],
     templateUrl: './fossil-viewer.component.html',
     styleUrl: './fossil-viewer.component.css'
 })

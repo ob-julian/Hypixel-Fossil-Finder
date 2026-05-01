@@ -1,11 +1,11 @@
 import { Component, Input, Output, EventEmitter, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+
 import { Fossil } from '../../../models/fossil/fossil.model';
 
 @Component({
     selector: 'fossil-editor',
-    imports: [FormsModule, CommonModule],
+    imports: [FormsModule],
     templateUrl: './fossil-editor.component.html',
     styleUrl: './fossil-editor.component.css',
     changeDetection: ChangeDetectionStrategy.OnPush

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { FormsModule } from '@angular/forms';
 @Component({
     selector: 'theme-switcher',
-    imports: [CommonModule, FormsModule],
+    imports: [FormsModule],
     templateUrl: './theme-switcher.component.html',
     styleUrl: './theme-switcher.component.css'
 })
