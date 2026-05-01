@@ -61,9 +61,4 @@ export class FossilViewComponent {
         return '';
     }
 
-    trackByIndex(index: number, item: any): number {
-        return index;
-    }    
-    
-
 }

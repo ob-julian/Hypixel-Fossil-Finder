@@ -9,3 +9,10 @@
     float: right;
 }
 
+#delete-local-yes {
+    background-color: var(--abort-color);
+}
+
+#delete-local-no {
+    background-color: var(--confirm-color);
+}

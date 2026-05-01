@@ -2,9 +2,9 @@
   <strong>{{ fossil.name }}</strong>
   <p class="fossil-description">{{ fossil.description }}</p>
   <div class="inventory-container">
-    @for (row of fossil.data; track trackByIndex(i, row); let i = $index) {
+    @for (row of fossil.data; track $index; let i = $index) {
       <div class="inventory">
-        @for (cell of row; track trackByIndex(j, cell); let j = $index) {
+        @for (cell of row; track $index; let j = $index) {
           <div class="invslot-container">
             <span class="invslot">
               @if (cell) {

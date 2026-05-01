@@ -14,3 +14,7 @@
 .button-edit-container {
     display: flex;
 }
+
+#button-cancel {
+    background-color: var(--abort-color);
+}

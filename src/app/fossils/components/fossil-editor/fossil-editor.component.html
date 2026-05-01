@@ -41,7 +41,7 @@
         </div>
       </div>
       <button (click)="saveFossil()">Save</button>
-      <button (click)="cancelEdit()">Cancel</button>
+      <button (click)="cancelEdit()" id="button-cancel">Cancel</button>
       @if (hasError) {
         <div class="error">{{ error }}</div>
       }

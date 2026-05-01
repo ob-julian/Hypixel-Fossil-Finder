@@ -9,9 +9,9 @@
   </div>
   <div class="inventory-legend-wrapper">
     <div class="inventory-container">
-      @for (row of data; track row; let i = $index) {
-        <div class="inventory">
-          @for (cell of row; track cell; let j = $index) {
+    @for (row of data; track $index; let i = $index) {
+      <div class="inventory">
+        @for (cell of row; track $index; let j = $index) {
             <div class="invslot-container">
               <span class="invslot" (click)="toggleCellState(i, j)">
                 @if (cell) {
@@ -47,9 +47,7 @@
       @if (numberOfPossibleExcavations > 0) {
         <div>
           <span style="background-image: url('panes/yellow.png')" class="invslot-display"></span>
-          <span>- Best possible next tile@if (numberOfPossibleExcavations > 1) {
-            s
-          }</span>
+          <span>- Best possible next tile@if (numberOfPossibleExcavations > 1) {s}</span>
         </div>
       }
     </div>

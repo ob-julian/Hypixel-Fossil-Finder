@@ -2,6 +2,12 @@
     --transition-duration-bg-color: 0.5s;
     --transition-duration-color: 0.2s;
     --transition-duration-border: 0.4s;
+
+    --error-color: red;
+    --delete-button-color: #f44336;
+    --button-color: #4CAF50;
+    --confirm-color: #3b90ff;
+    --abort-color: #f44336;
 }
 
 .no-transition {
@@ -19,45 +25,36 @@ body, .card, button, .invslot, textarea, input, select {
     --body-background: #f8f9fa;
     --input-background-color: #e0e3e6;
     --background-color: #C6C6C6;
-    --button-color: #4CAF50;
     --black: black;
     --white: white;
     --inventory-background: #8B8B8B;
     --inventory-border-1: #373737;
     --inventory-border-2: #FFF;
-    --error-color: red;
     --button-group-background: #f8f9fa;
-    --delete-button-color: #f44336;
 }
 
 .mode-dark {
     --body-background: #0a0a0a;
     --input-background-color: #1a1a1a;
     --background-color: #1a1a1a;
-    --button-color: #4CAF50;
     --black: #d6d6d6;
     --white: #0c0c39;
     --inventory-background: #2f2f2f;
     --inventory-border-1: #202020;
     --inventory-border-2: #636363;
-    --error-color: red;
     --button-group-background: #2c354d;
-    --delete-button-color: #f44336;
 }
 
 .mode-furfsky {
     --body-background: #312a34;
     --input-background-color: #201b22;
     --background-color: #292229;
-    --button-color: #4CAF50;
     --black: #fbcc6c;
     --white: #0c0c39;
     --inventory-background: #525c88;
     --inventory-border-1: #404973;
     --inventory-border-2: #7984b9;
-    --error-color: red;
     --button-group-background: #2c354d;
-    --delete-button-color: #f44336;
 }
 
 

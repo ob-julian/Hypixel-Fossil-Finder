@@ -1,0 +1,11 @@
+#delete-button-yes {
+    background-color: var(--abort-color)
+}
+
+#delete-button-no {
+    background-color: var(--confirm-color);
+}
+
+#delete-button {
+    background-color: var(--delete-button-color);
+}
