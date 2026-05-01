@@ -145,7 +145,7 @@ button:hover {
     flex-wrap: nowrap;
     overflow-x: auto;
     height: auto;
-    padding: 1px; /*Otherwise Chrome shows a scrollbar*/
+    padding: 2px; /*Otherwise Chrome shows a scrollbar*/
 }
 
 .fossil-description {
