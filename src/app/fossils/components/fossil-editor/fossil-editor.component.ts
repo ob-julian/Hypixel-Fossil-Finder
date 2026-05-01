@@ -5,7 +5,6 @@ import { Fossil } from '../../../models/fossil/fossil.model';
 
 @Component({
     selector: 'fossil-editor',
-    standalone: true,
     imports: [FormsModule, CommonModule],
     templateUrl: './fossil-editor.component.html',
     styleUrl: './fossil-editor.component.css',

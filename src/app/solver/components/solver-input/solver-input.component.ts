@@ -8,7 +8,6 @@ import { ThemeSwitcherComponent } from "../../../theme/theme-switcher/theme-swit
 
 @Component({
     selector: 'app-solver-input',
-    standalone: true,
     imports: [CommonModule, FormsModule, ThemeSwitcherComponent],
     templateUrl: './solver-input.component.html',
     styleUrl: './solver-input.component.css'

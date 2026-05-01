@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 @Component({
     selector: 'theme-switcher',
-    standalone: true,
     imports: [CommonModule, FormsModule],
     templateUrl: './theme-switcher.component.html',
     styleUrl: './theme-switcher.component.css'

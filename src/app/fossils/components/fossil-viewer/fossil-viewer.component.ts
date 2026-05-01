@@ -6,7 +6,6 @@ import { FossilViewComponent } from '../../../common/component/fossil-view/fossi
 
 @Component({
     selector: 'fossil-viewer',
-    standalone: true,
     imports: [CommonModule, FossilViewComponent],
     templateUrl: './fossil-viewer.component.html',
     styleUrl: './fossil-viewer.component.css'

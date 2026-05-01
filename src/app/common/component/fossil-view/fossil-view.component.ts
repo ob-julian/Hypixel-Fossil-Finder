@@ -5,7 +5,6 @@ import { ColoredFossil } from '../../../models/colored-fossil/colored-fossil.mod
 
 @Component({
     selector: 'fossil-view',
-    standalone: true,
     imports: [CommonModule],
     templateUrl: './fossil-view.component.html',
     styleUrl: './fossil-view.component.css'

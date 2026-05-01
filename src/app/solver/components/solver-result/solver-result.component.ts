@@ -8,7 +8,6 @@ import { SolverService } from '../../services/solver.service';
 
 @Component({
     selector: 'app-solver-result',
-    standalone: true,
     imports: [FossilViewComponent, CommonModule, ScrollingModule],
     templateUrl: './solver-result.component.html',
     styleUrl: './solver-result.component.css'

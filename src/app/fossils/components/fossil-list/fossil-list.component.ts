@@ -12,7 +12,6 @@ import { ThemeSwitcherComponent } from "../../../theme/theme-switcher/theme-swit
 
 @Component({
     selector: 'fossil-list',
-    standalone: true,
     imports: [CommonModule, FossilViewerComponent, FossilEditorComponent, ThemeSwitcherComponent],
     templateUrl: './fossil-list.component.html',
     styleUrl: './fossil-list.component.css'
