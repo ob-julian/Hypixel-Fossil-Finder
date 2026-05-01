@@ -60,6 +60,7 @@ npm run build
 ```
 
 The build artifacts will be stored in the `dist/` directory.
+> Pls note that the [inject-meta.js](src/scripts/inject-meta.js) script is currently configured for **MY** production build. If you want to deploy the app yourself, make sure to update the `imagePath` and `host` variables in that file accordingly before building.
 
 ### Server Configuration
 

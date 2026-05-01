@@ -1,13 +1,13 @@
 const fs = require("fs");
 const path = require("path");
-const minify = require('html-minifier').minify;
+const minify = require('html-minifier-terser').minify;
 
 const appName = "hypixel_fossil_finder";
 const metaRoutes = require("../meta.routes.json");
 const distPath = path.join(__dirname, "../../dist/", appName, "browser");
 
-const imagePath = "https://oberhofer.ddns.net/hff/favicon.ico";
-const host = "https://oberhofer.ddns.net/hff";
+const imagePath = "https://oberflow.dev/hff/favicon.ico";
+const host = "https://oberflow.dev/hff";
 
 // Function to generate meta tags
 const generateMetaTags = (title, description, route) => `
@@ -24,7 +24,7 @@ const generateMetaTags = (title, description, route) => `
 `;
 
 // Inject meta tags and create separate HTML files per route
-Object.entries(metaRoutes).forEach(([route, meta]) => {
+Object.entries(metaRoutes).forEach( async ([route, meta]) => {
     let indexHtml, outputPath;
     try {
         if (route === "/") {
@@ -33,8 +33,6 @@ Object.entries(metaRoutes).forEach(([route, meta]) => {
             // not needed anymore because I ditched prerendering
             //indexHtml = indexHtml.replace("<head>", "<head>\n" + "<meta http-equiv=\"refresh\" content=\"0; url=solver\" />");
             outputPath = path.join(distPath, "index.html");
-            // because we renamed the file we need to remove the old one
-            fs.unlinkSync(path.join(distPath, "index.csr.html"));
 
         } else {
             return; // deprecated for now
@@ -51,13 +49,21 @@ Object.entries(metaRoutes).forEach(([route, meta]) => {
         `${generateMetaTags(meta.title, meta.description, route)}\n</head>`
     );
     console.log(`🔄 Meta tags injected for ${route}`);
-    const minifiedHtml = minify(updatedHtml, {
+    const minifiedHtml = await minify(updatedHtml, {
         collapseWhitespace: true,
         removeComments: true,
         minifyJS: true,
         minifyCSS: true,
     });
     console.log(`🔧 HTML minified for ${route}`);
-    fs.writeFileSync(outputPath, minifiedHtml);
-    console.log(`✅ HTML file updated for ${route}`);
+    try {
+        fs.writeFileSync(outputPath, minifiedHtml);
+        console.log(`✅ HTML file updated for ${route}`);
+        
+        // new file successfully written, now we can delete the old csr file
+        fs.unlinkSync(path.join(distPath, "index.csr.html"));
+        console.log(`🗑️ Old CSR file deleted for ${route}`);
+    } catch (err) {
+        console.error(`❌ Error writing file for ${route}`);
+    }
 });
