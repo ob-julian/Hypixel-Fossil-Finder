@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 import { ScrollingModule } from '@angular/cdk/scrolling';
 
@@ -10,6 +10,7 @@ import { SolverService } from '../../services/solver.service';
     selector: 'app-solver-result',
     imports: [FossilViewComponent, ScrollingModule],
     templateUrl: './solver-result.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './solver-result.component.css'
 })
 export class SolverResultComponent implements OnInit {

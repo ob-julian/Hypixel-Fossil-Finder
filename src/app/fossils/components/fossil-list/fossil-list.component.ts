@@ -1,6 +1,6 @@
 
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 
@@ -14,6 +14,7 @@ import { ThemeSwitcherComponent } from "../../../theme/theme-switcher/theme-swit
     selector: 'fossil-list',
     imports: [CommonModule, FossilViewerComponent, FossilEditorComponent, ThemeSwitcherComponent],
     templateUrl: './fossil-list.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './fossil-list.component.css'
 })
 

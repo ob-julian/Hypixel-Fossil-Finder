@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { SolverService } from '../../services/solver.service';
@@ -10,6 +10,7 @@ import { ThemeSwitcherComponent } from "../../../theme/theme-switcher/theme-swit
     selector: 'app-solver-input',
     imports: [FormsModule, ThemeSwitcherComponent],
     templateUrl: './solver-input.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './solver-input.component.css'
 })
 export class SolverInputComponent implements OnInit {

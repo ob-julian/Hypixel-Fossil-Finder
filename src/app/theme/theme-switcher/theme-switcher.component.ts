@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 import { FormsModule } from '@angular/forms';
 @Component({
     selector: 'theme-switcher',
     imports: [FormsModule],
     templateUrl: './theme-switcher.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './theme-switcher.component.css'
 })
 export class ThemeSwitcherComponent implements OnInit {

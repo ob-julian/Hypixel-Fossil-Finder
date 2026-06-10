@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MetaFossil } from '../../../models/meta-fossil/meta-fossil.model';
 import { ColoredFossil } from '../../../models/colored-fossil/colored-fossil.model';
@@ -7,6 +7,7 @@ import { ColoredFossil } from '../../../models/colored-fossil/colored-fossil.mod
     selector: 'fossil-view',
     imports: [CommonModule],
     templateUrl: './fossil-view.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './fossil-view.component.css'
 })
 export class FossilViewComponent {
